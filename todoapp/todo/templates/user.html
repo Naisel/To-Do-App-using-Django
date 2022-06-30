@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'user.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav">
+           <div class="nav-title">
+            HI NAISEL
+        </div>
+        <div class="nav-quote">
+            PLAN UR DAY
+        </div>
+        <div class="nav-items">
+            <input type="date">
+        </div>
+    </div>
+    <div class="todo">
+        <div class="todo-nav">
+            TO DO
+            <input type="submit" value ="Add">
+        </div>
+        {% for task in tasks %}
+            <div class="todo-content">
+                <div class="todo-content-task">
+                    <input type="radio" id="task{{id}}" name="tasks" value="TASK{{id}}">
+                    <label for="html">{{task.title}} : {{task.description}}</label><br>     
+                </div>
+            </div>
+        {% endfor %}
+        <div class="todo-btn">
+            <input type="submit" value ="Add Task">
+            <input type="submit" value ="Delete Task">
+        </div>
+    </div>
+    <div class="spnote">
+        <div class="spnote-title">
+            <h4>Special Note</h4>
+        </div>
+        <div class="spnote-content">
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+        </div>
+    </div>
+    
+</body>
+</html>
