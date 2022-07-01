@@ -26,12 +26,12 @@
             <div class="todo-content">
                 <div class="todo-content-task">
                     <input type="radio" id="task{{id}}" name="tasks" value="TASK{{id}}">
-                    <label for="html">{{task.title}} : {{task.description}}</label><br>     
+                    <label for="html"><a href="{% url 'task' task.id %}">{{task.title}}</a> : {{task.description}}</label><br>     
                 </div>
             </div>
         {% endfor %}
         <div class="todo-btn">
-            <input type="submit" value ="Add Task">
+            <a href="create-task/">Add a task</a>
             <input type="submit" value ="Delete Task">
         </div>
     </div>
