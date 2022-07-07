@@ -20,19 +20,18 @@
     <div class="todo">
         <div class="todo-nav">
             TO DO
-            <input type="submit" value ="Add">
+            <!-- <a href="create-task/">Add a task</a> -->
         </div>
         {% for task in tasks %}
             <div class="todo-content">
                 <div class="todo-content-task">
-                    <input type="radio" id="task{{id}}" name="tasks" value="TASK{{id}}">
-                    <label for="html"><a href="{% url 'task' task.id %}">{{task.title}}</a> : {{task.description}}</label><br>     
+                    <!-- <input type="radio" id="{{task.id}}" name="tasks" value=""> -->
+                    <label for="html"><a href="{% url 'task' task.id %}">{{task.title}}</a> : {{task.description}}</label><br> 
                 </div>
             </div>
         {% endfor %}
         <div class="todo-btn">
             <a href="create-task/">Add a task</a>
-            <input type="submit" value ="Delete Task">
         </div>
     </div>
     <div class="spnote">

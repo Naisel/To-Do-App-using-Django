@@ -7,6 +7,10 @@ body{
     background-color: rgb(221, 248, 252);
     position: relative;
 }
+
+a {
+    text-decoration: none;
+}
 .nav {
     padding: auto;
     display: flex;
@@ -82,7 +86,7 @@ body{
     margin-bottom: 30px;
 }
 
-.todo-nav input {
+/* .todo-nav input {
     color: rgb(84, 9, 149);
     background-color: rgb(178, 252, 193);
     border-radius: 3px;
@@ -93,12 +97,19 @@ body{
 .todo-nav input:hover {
     color: rgb(4, 11, 88);
     background-color: rgb(214, 171, 255);
-}
+} */
 
 .todo-content {
     display: flex;
     flex-direction: column;
     color: rgb(2, 59, 59);
+}
+
+.todo-content-task {
+    display: flex;
+}
+.todo-content-task a{
+    margin-left: 10px;
 }
 
 .todo-btn {
@@ -127,16 +138,5 @@ body{
 }
 
 
-.todo-btn input {
-    max-width: 100px;
-    color: rgb(84, 9, 149);
-    background-color: rgb(178, 252, 193);
-    border-radius: 3px;
-    border-color: rgb(249, 215, 193);
-    width: 100px;
-}
 
-.todo-btn input:hover {
-    color: rgb(4, 11, 88);
-    background-color: rgb(214, 171, 255);
-}
+

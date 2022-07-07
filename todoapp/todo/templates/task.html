@@ -1,17 +1,34 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'task.css' %}">
     <title>Document</title>
 </head>
 <body>
     {% if task %}
-        {{task}} : {{task.description}}
+        <div class="task-view">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{task}} : {{task.description}}
+                <div class="task-view-btn">
+                    <a href="{% url 'task-update' task.id %}">Edit</a>
+                    <button>Delete</button>
+    
+                </div>
+            </form>
+        </div>
     {% else %}
         <div class="form">
             <form action="" method="POST">
                 {% csrf_token %}
                 {{form.as_p}}
-                <input type="submit" name="create"></input>
+                {% if update %}
+                    <button>update</button>
+                {% else %}
+                    <button >create</button>
+                {% endif %}
             </form>
         </div>
     {% endif %}

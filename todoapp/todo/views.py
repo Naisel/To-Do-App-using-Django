@@ -3,9 +3,10 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseRedirect 
 from django.urls import reverse_lazy
+
 
 from .models import Task
 
@@ -20,11 +21,11 @@ class TaskList(ListView):
 	paginate_by = 10
 	ordering = ['-create_date']
 
-class TaskDetail(DetailView):
-    model = Task
-    template_name = 'task.html'
-    context_object_name = 'task'
-    pk_url_kwarg = 'pk'
+# class TaskDetail(DetailView):
+#     model = Task
+#     template_name = 'task.html'
+#     context_object_name = 'task'
+#     pk_url_kwarg = 'pk'
 
 
 class TaskCreate(CreateView):
@@ -34,3 +35,21 @@ class TaskCreate(CreateView):
 	fields = '__all__'
 	success_url = reverse_lazy('tasks') 
 	
+class TaskUpdate(UpdateView):
+	model = Task
+	context_object_name = 'update'
+	template_name = 'task.html'
+	fields = '__all__'
+	success_url = reverse_lazy('tasks') 
+
+class TaskDelete(DeleteView):
+	model = Task
+	context_object_name = 'task'
+	success_url = reverse_lazy('tasks')
+	template_name = 'task.html'
+
+
+
+
+
+

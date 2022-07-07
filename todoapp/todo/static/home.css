@@ -6,6 +6,26 @@
 body{
     background-color: rgb(221, 248, 252);
 }
+
+a{
+    text-decoration: none;
+}
+
+button {
+    margin-top: 10px;
+    color: rgb(84, 9, 149);
+    background-color: rgb(178, 252, 193);
+    border-radius: 3px;
+    border-color: rgb(249, 215, 193);
+    width: 60px;
+}
+button:hover {
+    color: rgb(4, 11, 88);
+    background-color: rgb(214, 171, 255);
+}
+
+
+
 .nav {
     padding: auto;
     display: flex;
