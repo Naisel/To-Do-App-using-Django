@@ -1,8 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <link rel="stylesheet" type="text/css" href="login.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
     <title>Document</title>
 </head>
 <body>
@@ -11,8 +12,8 @@
             TO DO APP
         </div>
         <div class="nav-items">
-            <a href="home.html">Home</a>
-            <a href="login.html">Login</a>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'login' %}">Login</a>
             <a href="register.html">Register</a>
             <a href="home.html#about">About</a>
             <a href="home.html#help">Help</a>
@@ -22,15 +23,19 @@
         <div class="login-title">
             <h4>USER LOGIN</h4>
         </div>
-        <div class="login-form">
-            user name  <input type="text">
-            password  <input type="password">
-        </div>
-        <div class="login-btn">
-            <a href="register.html">Register</a>
-            <button>Login</button>
-
-        </div>
+        <form action="" method ="POST">
+            {% csrf_token %}
+            <div class="login-form">
+                user name  {{form.username}}
+                password  {{form.password}}
+                <!-- user name  <input type="text">
+                password  <input type="password"> -->
+            </div>
+            <div class="login-btn">
+                <a href="register.html">Register</a>
+                <button>Login</button>
+            </div>
+        </form>
     </div>
     
 </body>

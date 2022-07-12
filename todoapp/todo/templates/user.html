@@ -7,14 +7,15 @@
 </head>
 <body>
     <div class="nav">
-           <div class="nav-title">
-            HI NAISEL
+        <div class="nav-title">
+            Hi {{request.user}}
+            <input type="date">
         </div>
         <div class="nav-quote">
             PLAN UR DAY
         </div>
         <div class="nav-items">
-            <input type="date">
+            <a href="{% url 'logout' %}">log out</a>
         </div>
     </div>
     <div class="todo">
@@ -31,7 +32,7 @@
             </div>
         {% endfor %}
         <div class="todo-btn">
-            <a href="create-task/">Add a task</a>
+            <a href="create-task/">Add a task {{color}}</a>
         </div>
     </div>
     <div class="spnote">
